@@ -1,6 +1,5 @@
-export const getProductImage=(imageName:string):string=>{
-
-    return imageName.includes('http')
+export const getProductImage = (imageName: string): string => {
+  return imageName.includes('http')
     ? imageName
-    :`${import.meta.env.VITE_TESLO_API_URL}/files/product/${imageName}`;
+    : `${import.meta.env.VITE_TESLO_API_URL}/files/product/${imageName}`;
 };

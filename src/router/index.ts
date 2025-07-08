@@ -1,20 +1,21 @@
-import ShopLayout from '@/modules/shop/layouts/ShopLayout.vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import ShopLayout from '@/modules/shop/layouts/ShopLayout.vue';
+import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [  
- {
-   path: '/',
-   name: 'shop',
-   component: ShopLayout,
-   children:[{
-    path:'',
-    name:'home',
-    component:() => import('@/modules/shop/views/HomeView.vue'),
-   },
-  ],
- },
+  routes: [
+    {
+      path: '/',
+      name: 'shop',
+      component: ShopLayout,
+      children: [
+        {
+          path: '',
+          name: 'home',
+          component: () => import('@/modules/shop/views/HomeView.vue'),
+        },
+      ],
+    },
     // {
     //   path: '/about',
     //   name: 'about',
@@ -24,6 +25,6 @@ const router = createRouter({
     //   component: () => import('../views/AboutView.vue'),
     // },
   ],
-})
+});
 
-export default router
+export default router;
