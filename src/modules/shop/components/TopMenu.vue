@@ -2,42 +2,70 @@
   <div>
     <!-- Header Navbar -->
     <nav
-      class="fixed top-0 left-0 z-20 w-full border-b border-gray-200 bg-white py-2.5 px-6 sm:px-4"
+      class="fixed top-0 left-0 z-20 w-full border-b border-orange-200 bg-black py-2.5 px-6 sm:px-4"
     >
       <div class="container mx-auto flex max-w-6xl flex-wrap items-center justify-between">
         <a href="#" class="flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="mr-3 h-6 text-blue-500 sm:h-9"
+            viewBox="0 0 48 48"
+            class="mr-3 h-6 sm:h-9"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
-            />
+            <circle cx="24" cy="28" r="12" fill="#fb923c"/>
+            <ellipse cx="16" cy="24" rx="3" ry="5" fill="#fb923c"/>
+            <ellipse cx="32" cy="24" rx="3" ry="5" fill="#fb923c"/>
+            <polygon points="12,16 16,8 20,18" fill="#fb923c"/>
+            <polygon points="36,16 32,8 28,18" fill="#fb923c"/>
+            <ellipse cx="20" cy="30" rx="1.2" ry="2" fill="#fff"/>
+            <ellipse cx="28" cy="30" rx="1.2" ry="2" fill="#fff"/>
+            <ellipse cx="20" cy="30" rx="0.5" ry="1" fill="#222"/>
+            <ellipse cx="28" cy="30" rx="0.5" ry="1" fill="#222"/>
+            <path d="M24 34 Q24 36 26 36" stroke="#222" stroke-width="1" fill="none"/>
+            <path d="M24 34 Q24 36 22 36" stroke="#222" stroke-width="1" fill="none"/>
+            <path d="M24 34 Q24 38 28 37" stroke="#222" stroke-width="1" fill="none"/>
+            <path d="M24 34 Q24 38 20 37" stroke="#222" stroke-width="1" fill="none"/>
           </svg>
 
-          <span class="self-center whitespace-nowrap text-xl font-semibold">Termcode</span>
+          <span class="self-center whitespace-nowrap text-xl font-semibold text-white">The cat store</span>
         </a>
         <div class="mt-2 sm:mt-0 sm:flex md:order-2">
-          <!-- Login Button -->
-          <button
-            type="button"
-            class="rounde mr-3 hidden border border-blue-700 py-1.5 px-6 text-center text-sm font-medium text-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 md:inline-block rounded-lg"
-          >
-            Login
-          </button>
-          <button
-            type="button"
-            class="rounde mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0 md:inline-block rounded-lg"
-          >
-            Register
-          </button>
-          <!-- Register Button -->
+          <template v-if="!authStore.isAuthenticaded">
+            <!-- Login Button -->
+            <RouterLink
+              to="/auth/login"
+              type="button"
+              class="mr-3 hidden border border-blue-700 py-1.5 px-6 text-center text-sm font-medium text-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 md:inline-block rounded-lg"
+            >
+              Login
+            </RouterLink>
+            <!-- Register Button -->
+            <RouterLink
+              to="/auth/register"
+              type="button"
+              class="mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0 md:inline-block rounded-lg"
+            >
+              Register
+            </RouterLink>
+          </template>
+          <template v-if="authStore.isAuthenticaded">
+            <!-- Admin Button -->
+            <RouterLink
+              v-if="authStore.isAdmin"
+              to="/admin"
+              type="button"
+              class="mr-3 hidden border border-orange-700 py-1.5 px-6 text-center text-sm font-medium text-orange-700 focus:outline-none focus:ring-4 focus:ring-orange-300 md:inline-block rounded-lg"
+            >
+              Administrator
+            </RouterLink>
+            <!-- Logout Button -->
+            <button
+              @click="authStore.logout()"
+              type="button"
+              class="mr-3 hidden bg-orange-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-orange-800 focus:outline-none focus:ring-4 focus:ring-orange-300 md:mr-0 md:inline-block rounded-lg"
+            >
+              Logout
+            </button>
+          </template>
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
@@ -66,36 +94,40 @@
           id="navbar-sticky"
         >
           <ul
-            class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-sm md:font-medium"
+            class="mt-4 flex flex-col rounded-lg bg-black/90 p-4 shadow-lg md:mt-0 md:flex-row md:space-x-6 md:bg-black md:text-base md:font-semibold"
           >
             <li>
-              <a
-                href="#"
-                class="block rounded bg-blue-700 py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0 md:text-blue-700"
+              <RouterLink
+                to="/"
+                class="block rounded-lg py-2 pl-3 pr-4 text-white transition-colors duration-200 hover:bg-orange-500/80 hover:text-white md:bg-transparent md:p-0 md:hover:bg-transparent md:hover:text-orange-400"
                 aria-current="page"
-                >Home</a
               >
+                Home
+              </RouterLink>
             </li>
             <li>
-              <a
-                href="#"
-                class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
-                >About</a
+              <RouterLink
+                to="/about"
+                class="block rounded-lg py-2 pl-3 pr-4 text-gray-300 transition-colors duration-200 hover:bg-orange-500/80 hover:text-white md:bg-transparent md:p-0 md:hover:bg-transparent md:hover:text-orange-400"
               >
+                About
+              </RouterLink>
             </li>
             <li>
-              <a
-                href="#"
-                class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
-                >Services</a
+              <RouterLink
+                to="/services"
+                class="block rounded-lg py-2 pl-3 pr-4 text-gray-300 transition-colors duration-200 hover:bg-orange-500/80 hover:text-white md:bg-transparent md:p-0 md:hover:bg-transparent md:hover:text-orange-400"
               >
+                Services
+              </RouterLink>
             </li>
             <li>
-              <a
-                href="#"
-                class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
-                >Contact</a
+              <RouterLink
+                to="/contact"
+                class="block rounded-lg py-2 pl-3 pr-4 text-gray-300 transition-colors duration-200 hover:bg-orange-500/80 hover:text-white md:bg-transparent md:p-0 md:hover:bg-transparent md:hover:text-orange-400"
               >
+                Contact
+              </RouterLink>
             </li>
           </ul>
         </div>
@@ -104,6 +136,10 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useAuthStore } from '@/modules/auth/stores/authStores';
+
+const authStore = useAuthStore();
+</script>
 
 <style scoped></style>

@@ -12,8 +12,8 @@
 </template>
 
 <script setup lang="ts">
-import CustomFooter from '../components/CustomFooter.vue';
-import TopMenu from '../components/TopMenu.vue';
+import CustomFooter from '../components/customFooter.vue';
+import TopMenu from '../components/topMenu.vue';
 </script>
 
 <style scoped></style>

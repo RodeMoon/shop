@@ -1,97 +1,130 @@
 <template>
   <!-- Title -->
-  <div class="pt-32 bg-white">
-    <h1 class="text-center text-2xl font-bold text-gray-800">All Products</h1>
+  <div class="pt-32 bg-orange-300 flex flex-col items-center">
+    <h1 class="text-center text-2xl font-bold text-black-800 mb-4">Make an adoption, don't buy!</h1>
+    <svg
+      width="120"
+      height="100"
+      viewBox="0 0 120 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="animate-bounce"
+      style="animation: cat-bounce 1.5s infinite;"
+    >
+      <g>
+        <!-- Body -->
+        <ellipse cx="60" cy="70" rx="35" ry="20" fill="#fff" stroke="#222" stroke-width="2"/>
+        <!-- Head -->
+        <ellipse cx="60" cy="45" rx="20" ry="18" fill="#fff" stroke="#222" stroke-width="2"/>
+        <!-- Left Ear -->
+        <polygon points="45,32 50,15 55,32" fill="#fff" stroke="#222" stroke-width="2"/>
+        <!-- Right Ear -->
+        <polygon points="75,32 70,15 65,32" fill="#fff" stroke="#222" stroke-width="2"/>
+        <!-- Left Eye -->
+        <ellipse cx="54" cy="45" rx="2.5" ry="3" fill="#222"/>
+        <!-- Right Eye -->
+        <ellipse cx="66" cy="45" rx="2.5" ry="3" fill="#222"/>
+        <!-- Nose -->
+        <ellipse cx="60" cy="52" rx="2" ry="1.2" fill="#fbb" stroke="#222" stroke-width="1"/>
+        <!-- Mouth -->
+        <path d="M58 54 Q60 56 62 54" stroke="#222" stroke-width="1" fill="none"/>
+        <!-- Whiskers Left -->
+        <path d="M48 52 Q42 53 48 55" stroke="#222" stroke-width="1" fill="none"/>
+        <path d="M48 56 Q42 58 48 59" stroke="#222" stroke-width="1" fill="none"/>
+        <!-- Whiskers Right -->
+        <path d="M72 52 Q78 53 72 55" stroke="#222" stroke-width="1" fill="none"/>
+        <path d="M72 56 Q78 58 72 59" stroke="#222" stroke-width="1" fill="none"/>
+        <!-- Tail (wiggle animation) -->
+        <path id="cat-tail" d="M95 80 Q110 85 100 70" stroke="#222" stroke-width="4" fill="none"/>
+      </g>
+    </svg>
   </div>
-
   <!-- Tab Menu -->
   <div
-    class="flex flex-wrap items-center overflow-x-auto overflow-y-hidden py-10 justify-center bg-white text-gray-800"
+    class="flex flex-wrap items-center overflow-x-auto overflow-y-hidden py-10 justify-center bg-black text-white"
   >
     <a
       rel="noopener noreferrer"
       href="#"
-      class="flex items-center flex-shrink-0 px-5 py-3 space-x-2text-gray-600"
+      class="flex items-center flex-shrink-0 px-5 py-3 space-x-2 text-white"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="currentColor"
+        stroke="white"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
         class="w-4 h-4"
       >
-        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+        <path d="M12 2C10 2 8 4 8 6c0 2 2 4 4 4s4-2 4-4c0-2-2-4-4-4zm0 10c-4.418 0-8 2.239-8 5v3h16v-3c0-2.761-3.582-5-8-5z"/>
       </svg>
-      <span>Architecto</span>
+      <span>All the cats</span>
     </a>
     <a
       rel="noopener noreferrer"
       href="#"
-      class="flex items-center flex-shrink-0 px-5 py-3 space-x-2 rounded-t-lg text-gray-900"
+      class="flex items-center flex-shrink-0 px-5 py-3 space-x-2 text-white"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="currentColor"
+        stroke="white"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
         class="w-4 h-4"
       >
-        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+        <circle cx="12" cy="8" r="4"/>
+        <path d="M2 20c0-4 8-6 10-6s10 2 10 6"/>
       </svg>
-      <span>Corrupti</span>
+      <span>Kittens</span>
     </a>
     <a
       rel="noopener noreferrer"
       href="#"
-      class="flex items-center flex-shrink-0 px-5 py-3 space-x-2 text-gray-600"
+      class="flex items-center flex-shrink-0 px-5 py-3 space-x-2 text-white"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="currentColor"
+        stroke="white"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
         class="w-4 h-4"
       >
-        <polygon
-          points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-        ></polygon>
+        <path d="M4 4l4 4M20 4l-4 4M4 20l4-4M20 20l-4-4"/>
+        <circle cx="12" cy="12" r="6"/>
       </svg>
-      <span>Excepturi</span>
+      <span>Oldies</span>
     </a>
     <a
       rel="noopener noreferrer"
       href="#"
-      class="flex items-center flex-shrink-0 px-5 py-3 space-x-2 text-gray-600"
+      class="flex items-center flex-shrink-0 px-5 py-3 space-x-2 text-white"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="currentColor"
+        stroke="white"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
         class="w-4 h-4"
       >
-        <circle cx="12" cy="12" r="10"></circle>
-        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+        <path d="M12 2l2 7h7l-5.5 4 2 7-5.5-4-5.5 4 2-7L3 9h7z"/>
       </svg>
-      <span>Consectetur</span>
+      <span>Specials</span>
     </a>
   </div>
 
   <div v-if="!products">
-    <h1>Cargando Productos</h1>
+    <h1>Loading more cuties!</h1>
   </div>
 
   <!-- Product List -->
@@ -105,11 +138,10 @@
 </template>
 
 <script setup lang="ts">
-import * as Vue from 'vue';
 import { getProducts } from '@/modules/products/actions';
 import { useQuery } from '@tanstack/vue-query';
-import ProductList from '@/modules/products/components/ProductList.vue';
-import ButtonNavigation from '@/modules/common/components/ButtonNavegation.vue';
+import ProductList from '@/modules/products/components/productList.vue';
+import ButtonNavigation from '@/modules/common/components/btnNavegation.vue';
 import { useRoute } from 'vue-router';
 import { ref } from 'vue';
 import { watch } from 'vue';
@@ -141,4 +173,26 @@ watchEffect(() => {
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+.bg-orange-400 {
+  background-color: #f97316; /* Tailwind CSS orange-400 */
+}
+.bg-orange-100 {
+  background-color: #ffedd5; /* Tailwind CSS orange-100 */
+}
+.text-black-800 {
+  color: #1f2937; /* Tailwind CSS black-800 */
+}
+.text-orange-200 {
+  color: #fcd34d; /* Tailwind CSS orange-200 */
+}
+@keyframes cat-bounce {
+    0%, 100% { transform: translateY(0);}
+    50% { transform: translateY(-10px);}
+  }
+</style>

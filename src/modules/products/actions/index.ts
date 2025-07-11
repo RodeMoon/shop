@@ -1,2 +1,2 @@
-export * from './get-products';
-export * from './get-product-image';
+export * from './getProducts';
+export * from './getProductImg';
