@@ -7,7 +7,7 @@
   <h1 class="text-2xl">Login</h1>
   <form @submit.prevent="onLogin">
     <!-- Email Input -->
-    <div class="mb-4" style="font-family: 'Manufacturing Consent', normal">
+    <div class="mb-4" style="font-family: 'Poppins', sans-serif">
       <label for="mail" class="block text-white-600">Email</label>
       <input
       v-model="myForm.mail"
@@ -16,11 +16,11 @@
       name="mail"
       class="w-full border border-white-300 rounded-md py-2 px-3 focus:outline-none focus:border-orange-500"
       autocomplete="off"
-      style="font-family: 'Manufacturing Consent', normal"
+      style="font-family: 'Poppins', sans-serif"
       />
     </div>
     <!-- Password Input -->
-    <div class="mb-4" style="font-family: 'Manufacturing Consent', normal">
+    <div class="mb-4" style="font-family: 'Poppins', sans-serif">
       <label for="password" class="block text-white-600">Password</label>
       <input
         v-model="myForm.password"
@@ -29,7 +29,7 @@
         name="password"
         class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-orange-500"
         autocomplete="off"
-        style="font-family: 'Manufacturing Consent', normal"
+        style="font-family: 'Poppins', sans-serif"
       />
     </div>
     <!-- Remember Me Checkbox -->
@@ -107,10 +107,5 @@ h1 {
 }
 h1.text-2xl {
   font-weight: 600;
-}
-.manufacturing-consent-regular {
-  font-family: "Manufacturing Consent", system-ui;
-  font-weight: 400;
-  font-style: normal;
 }
 </style>

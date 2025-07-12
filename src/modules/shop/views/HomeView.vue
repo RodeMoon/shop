@@ -9,33 +9,33 @@
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       class="animate-bounce"
-      style="animation: cat-bounce 1.5s infinite;"
+      style="animation: cat-bounce 1.5s infinite"
     >
       <g>
         <!-- Body -->
-        <ellipse cx="60" cy="70" rx="35" ry="20" fill="#fff" stroke="#222" stroke-width="2"/>
+        <ellipse cx="60" cy="70" rx="35" ry="20" fill="#fff" stroke="#222" stroke-width="2" />
         <!-- Head -->
-        <ellipse cx="60" cy="45" rx="20" ry="18" fill="#fff" stroke="#222" stroke-width="2"/>
+        <ellipse cx="60" cy="45" rx="20" ry="18" fill="#fff" stroke="#222" stroke-width="2" />
         <!-- Left Ear -->
-        <polygon points="45,32 50,15 55,32" fill="#fff" stroke="#222" stroke-width="2"/>
+        <polygon points="45,32 50,15 55,32" fill="#fff" stroke="#222" stroke-width="2" />
         <!-- Right Ear -->
-        <polygon points="75,32 70,15 65,32" fill="#fff" stroke="#222" stroke-width="2"/>
+        <polygon points="75,32 70,15 65,32" fill="#fff" stroke="#222" stroke-width="2" />
         <!-- Left Eye -->
-        <ellipse cx="54" cy="45" rx="2.5" ry="3" fill="#222"/>
+        <ellipse cx="54" cy="45" rx="2.5" ry="3" fill="#222" />
         <!-- Right Eye -->
-        <ellipse cx="66" cy="45" rx="2.5" ry="3" fill="#222"/>
+        <ellipse cx="66" cy="45" rx="2.5" ry="3" fill="#222" />
         <!-- Nose -->
-        <ellipse cx="60" cy="52" rx="2" ry="1.2" fill="#fbb" stroke="#222" stroke-width="1"/>
+        <ellipse cx="60" cy="52" rx="2" ry="1.2" fill="#fbb" stroke="#222" stroke-width="1" />
         <!-- Mouth -->
-        <path d="M58 54 Q60 56 62 54" stroke="#222" stroke-width="1" fill="none"/>
+        <path d="M58 54 Q60 56 62 54" stroke="#222" stroke-width="1" fill="none" />
         <!-- Whiskers Left -->
-        <path d="M48 52 Q42 53 48 55" stroke="#222" stroke-width="1" fill="none"/>
-        <path d="M48 56 Q42 58 48 59" stroke="#222" stroke-width="1" fill="none"/>
+        <path d="M48 52 Q42 53 48 55" stroke="#222" stroke-width="1" fill="none" />
+        <path d="M48 56 Q42 58 48 59" stroke="#222" stroke-width="1" fill="none" />
         <!-- Whiskers Right -->
-        <path d="M72 52 Q78 53 72 55" stroke="#222" stroke-width="1" fill="none"/>
-        <path d="M72 56 Q78 58 72 59" stroke="#222" stroke-width="1" fill="none"/>
+        <path d="M72 52 Q78 53 72 55" stroke="#222" stroke-width="1" fill="none" />
+        <path d="M72 56 Q78 58 72 59" stroke="#222" stroke-width="1" fill="none" />
         <!-- Tail (wiggle animation) -->
-        <path id="cat-tail" d="M95 80 Q110 85 100 70" stroke="#222" stroke-width="4" fill="none"/>
+        <path id="cat-tail" d="M95 80 Q110 85 100 70" stroke="#222" stroke-width="4" fill="none" />
       </g>
     </svg>
   </div>
@@ -58,7 +58,9 @@
         stroke-linejoin="round"
         class="w-4 h-4"
       >
-        <path d="M12 2C10 2 8 4 8 6c0 2 2 4 4 4s4-2 4-4c0-2-2-4-4-4zm0 10c-4.418 0-8 2.239-8 5v3h16v-3c0-2.761-3.582-5-8-5z"/>
+        <path
+          d="M12 2C10 2 8 4 8 6c0 2 2 4 4 4s4-2 4-4c0-2-2-4-4-4zm0 10c-4.418 0-8 2.239-8 5v3h16v-3c0-2.761-3.582-5-8-5z"
+        />
       </svg>
       <span>All the cats</span>
     </a>
@@ -77,8 +79,8 @@
         stroke-linejoin="round"
         class="w-4 h-4"
       >
-        <circle cx="12" cy="8" r="4"/>
-        <path d="M2 20c0-4 8-6 10-6s10 2 10 6"/>
+        <circle cx="12" cy="8" r="4" />
+        <path d="M2 20c0-4 8-6 10-6s10 2 10 6" />
       </svg>
       <span>Kittens</span>
     </a>
@@ -97,8 +99,8 @@
         stroke-linejoin="round"
         class="w-4 h-4"
       >
-        <path d="M4 4l4 4M20 4l-4 4M4 20l4-4M20 20l-4-4"/>
-        <circle cx="12" cy="12" r="6"/>
+        <path d="M4 4l4 4M20 4l-4 4M4 20l4-4M20 20l-4-4" />
+        <circle cx="12" cy="12" r="6" />
       </svg>
       <span>Oldies</span>
     </a>
@@ -117,7 +119,7 @@
         stroke-linejoin="round"
         class="w-4 h-4"
       >
-        <path d="M12 2l2 7h7l-5.5 4 2 7-5.5-4-5.5 4 2-7L3 9h7z"/>
+        <path d="M12 2l2 7h7l-5.5 4 2 7-5.5-4-5.5 4 2-7L3 9h7z" />
       </svg>
       <span>Specials</span>
     </a>
@@ -142,28 +144,17 @@ import { getProducts } from '@/modules/products/actions';
 import { useQuery } from '@tanstack/vue-query';
 import ProductList from '@/modules/products/components/productList.vue';
 import ButtonNavigation from '@/modules/common/components/btnNavegation.vue';
-import { useRoute } from 'vue-router';
-import { ref } from 'vue';
-import { watch } from 'vue';
 import { watchEffect } from 'vue';
 import { useQueryClient } from '@tanstack/vue-query';
+import { usePagination } from '@/modules/common/composables/usePagination';
 
-const route = useRoute();
-const page = ref(Number(route.query.page || 1));
 const queryClient = useQueryClient();
+const { page } = usePagination();
 
 const { data: products = [] } = useQuery({
   queryKey: ['products', { page: page }],
   queryFn: () => getProducts(page.value),
 });
-
-watch(
-  () => route.query.page,
-  (newPage) => {
-    page.value = Number(newPage || 1);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  },
-);
 
 watchEffect(() => {
   queryClient.prefetchQuery({
@@ -192,7 +183,12 @@ h1 {
   color: #fcd34d; /* Tailwind CSS orange-200 */
 }
 @keyframes cat-bounce {
-    0%, 100% { transform: translateY(0);}
-    50% { transform: translateY(-10px);}
+  0%,
+  100% {
+    transform: translateY(0);
   }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 </style>
